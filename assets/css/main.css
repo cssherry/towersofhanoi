@@ -165,7 +165,7 @@ iframe {
      display: none;
    }
 
-   #play.display {
+  #play.display {
      display: block;
      margin: auto;
      margin-top: 20px;
