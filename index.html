@@ -58,25 +58,42 @@
     <h1 class="centered">Towers of Hanoi</h1>
     <hr>
 
+    <p class="centered">
+      The objective is to move the entire stack to another column by:
+    <ul class="centered">
+      <li>Moving one disk at a time</li>
+      <li>Moving only the top-most disk in a stack</li>
+      <li>Not placing larger disks onto smaller disk</li>
+    </ul>
+  </p>
+
     <!-- Game board -->
-    <figure class="hanoi"></figure>
-    <div class="winner-text">
-      <button name="yes" class="btn btn-default" type="submit" id="play">Play Again?</button>
+    <div class="game-board">
+      <figure class="hanoi"></figure>
+      <div class="winner-text">
+        <button name="yes" class="btn btn-default" type="submit" id="play">Play Again?</button>
+      </div>
     </div>
 
     <!-- Optionally add more disks -->
     <br>
     <p class='centered'>
       <i>Change the number of disks?</i>
-      <button name="add-disk" class="btn btn-default btn-sm">+</button>
-      <button name="subtract-disk" class="btn btn-default btn-sm">-</button>
+      <button id="add-disk" class="btn btn-default btn-sm">+</button>
+      <button id="subtract-disk" class="btn btn-default btn-sm">-</button>
     </p>
 
     <script>
       $(function () {
-        var game = new Hanoi.Game()
-        var view = new Hanoi.View(game, $(".hanoi"));
+        var numberOfDisks = 3;
+
+        var addDisk = $("#add-disk");
+        var removeDesk = $("#subtract-disk");
+
+        var game = new Hanoi.Game(numberOfDisks);
+        var view = new Hanoi.View(game, $(".hanoi"), addDisk, removeDesk);
         view.clickTower();
+
       });
     </script>
 
@@ -86,9 +103,9 @@
         <p> <a href="http://www.cssherry.com/">Contact</a> | <a href="https://github.com/zhoux10/chess/tree/gh-pages">Visit on Github</a> | © 2015 - Today </p>
     </footer>
 
-      <!-- Bootstrap core JavaScript
-      ================================================== -->
-      <!-- Placed at the end of the document so the pages load faster -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
 
 
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
