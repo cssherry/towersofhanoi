@@ -100,26 +100,11 @@ iframe {
 /* ==========================================================================
    Tower of Hanoi style
    ========================================================================== */
-   * {
-     box-sizing: border-box;
-   }
-
-   h1 {
-     margin: 10px auto;
-     text-align: center;
-     color: mediumorchid;
-     font-size: 44px;
-   }
-
-   body{
-     width: 600px;
-     margin: auto;
-   }
-
    figure {
        display: block;
        margin: auto;
    }
+
    .hanoi {
      width: 600px;
      height: 200px;
@@ -175,15 +160,6 @@ iframe {
      margin-top: 20px;
      cursor: pointer;
    }
-
-   p {
-     width: 100%;
-     text-align: center;
-     color: #FF70DB;
-     font-size: 40px;
-     margin-top: 10px;
-   }
-
 
 /* ==========================================================================
    General styles
