@@ -19,9 +19,6 @@
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
 
     <script src="assets/js/jquery.min.js"></script>
-    <script type="text/javascript" src="./lib/hanoi-core.js"></script>
-    <script type="text/javascript" src="./lib/hanoi-view.js"></script>
-
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="assets/js/html5shiv.js"></script>
@@ -30,7 +27,7 @@
   </head>
 
   <body>
-    <div id="navbar-main">
+  	<div id="navbar-main">
       <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -42,11 +39,11 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li><a href="http://www.cssherry.com/#home" class="smoothScroll">Home</a></li>
-            <li> <a href="http://www.cssherry.com/#about" class="smoothScroll"> About</a></li>
-            <li> <a href="http://www.cssherry.com/#skills" class="smoothScroll"> Skills</a></li>
-            <li> <a href="http://www.cssherry.com/#portfolio" class="smoothScroll"> Portfolio</a></li>
-            <li> <a href="http://www.cssherry.com/#blog" class="smoothScroll"> Blog</a></li>
-            <li> <a href="http://www.cssherry.com/#contact" class="smoothScroll"> Contact</a></li>
+      			<li> <a href="http://www.cssherry.com/#about" class="smoothScroll"> About</a></li>
+      			<li> <a href="http://www.cssherry.com/#skills" class="smoothScroll"> Skills</a></li>
+      			<li> <a href="http://www.cssherry.com/#portfolio" class="smoothScroll"> Portfolio</a></li>
+      			<li> <a href="http://www.cssherry.com/#blog" class="smoothScroll"> Blog</a></li>
+      			<li> <a href="http://www.cssherry.com/#contact" class="smoothScroll"> Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -55,24 +52,27 @@
 
     <!-- Game display
     ================================================== -->
-    <h1 class="centered">Towers of Hanoi</h1>
+    <h1 class="centered">Let's Explode Some Numbers!</h1>
     <hr>
 
-    <figure class="hanoi"></figure>
-    <button name="yes" type="submit" id="play">Play Again!</button>
-
+    <canvas id="falling-screen">Your browser does not support the HTML5 canvas tag.</canvas>
+    <script src="./lib/util.js"></script>
+    <script src="./lib/movingObject.js"></script>
+    <script src="./lib/number.js"></script>
+    <script src="./lib/equations.js"></script>
+    <script src="./lib/game.js"></script>
+    <script src="./lib/fallingScreen.js"></script>
     <script>
-      $(function () {
-        var game = new Hanoi.Game()
-        var view = new Hanoi.View(game, $(".hanoi"));
-        view.clickTower();
-      });
+      var canvasEl = document.getElementById("falling-screen");
+      canvasEl.height = window.innerHeight - 50;
+      canvasEl.width = window.innerWidth;
+      var newGame = new ExplodingNumbers.Game(canvasEl.width, canvasEl.height,10);
+      var newView = new ExplodingNumbers.GameView(newGame, canvasEl);
+      newView.start();
     </script>
 
-    <!-- Footer
-    ================================================== -->
     <footer class="navbar navbar-default navbar-bottom" role="navigation">
-        <p> <a href="http://www.cssherry.com/">Contact</a> | <a href="https://github.com/zhoux10/chess/tree/gh-pages">Visit on Github</a> | © 2015 - Today </p>
+  			<p> <a href="http://www.cssherry.com/">Contact</a> | <a href="https://github.com/zhoux10/chess/tree/gh-pages">Visit on Github</a> | © 2015 - Today </p>
     </footer>
 
       <!-- Bootstrap core JavaScript
@@ -80,8 +80,8 @@
       <!-- Placed at the end of the document so the pages load faster -->
 
 
-    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
+  	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+  	<script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
