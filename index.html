@@ -58,10 +58,19 @@
     <h1 class="centered">Towers of Hanoi</h1>
     <hr>
 
+    <!-- Game board -->
     <figure class="hanoi"></figure>
     <div class="winner-text">
-      <button name="yes" type="submit" id="play">Play Again?</button>
+      <button name="yes" class="btn btn-default" type="submit" id="play">Play Again?</button>
     </div>
+
+    <!-- Optionally add more disks -->
+    <br>
+    <p class='centered'>
+      <i>Change the number of disks?</i>
+      <button name="add-disk" class="btn btn-default btn-sm">+</button>
+      <button name="subtract-disk" class="btn btn-default btn-sm">-</button>
+    </p>
 
     <script>
       $(function () {
