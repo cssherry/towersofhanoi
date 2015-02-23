@@ -146,6 +146,17 @@ iframe {
      cursor: pointer;
    }
 
+   /*Work around so that only first element is rotated*/
+   [tower]:hover > [disc-size] {
+     opacity: 1;
+     transition: opacity 0.5s;
+   }
+
+   [tower]:hover > [disc-size] ~ [disc-size] {
+     opacity: 0.75;
+     transition: none;
+   }
+
    [disc-size].fromTower {
      opacity: 1;
    }
