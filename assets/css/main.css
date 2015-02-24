@@ -124,26 +124,10 @@ iframe {
 
    .hanoi [disc-size]{
      border: 1px solid black;
-     height: 33.3%;
      border-radius: 12px;
      margin: auto;
      opacity: 0.75;
      background-color: darkorchid ;
-   }
-
-   .hanoi [disc-size="0"] {
-     width: 33.3%;
-   }
-   .hanoi [disc-size="1"] {
-     width: 66.6%;
-   }
-
-   .hanoi [disc-size="2"] {
-     width: 100%;
-   }
-
-   [tower] :not([disk-size]) {
-     height: 33.3%;
    }
 
    [tower]:hover {
