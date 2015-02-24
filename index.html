@@ -92,7 +92,9 @@
         // Set up event listeners for adding or removing disks
         var addDiskButton = $("#add-disk")[0];
         var removeDeskButton = $("#subtract-disk")[0];
+        changeHeightForFooter();
 
+        window.addEventListener( "resize", changeHeightForFooter, false )
         addDiskButton.addEventListener("click", addDisk);
         removeDeskButton.addEventListener("click", removeDisk);
 
@@ -116,6 +118,15 @@
           view.clickTower();
         }
 
+        function changeHeightForFooter () {
+          var docHeight = $(window).height();
+          var footerHeight = $('footer').height();
+          var footerTop = $('footer').position().top + footerHeight;
+
+          if (footerTop < docHeight) {
+            $('footer').css('margin-top', 100 + (docHeight - footerTop) + 'px');
+          }
+        }
       });
     </script>
 
